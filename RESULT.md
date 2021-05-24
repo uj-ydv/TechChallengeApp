@@ -20,18 +20,20 @@ I am using Terraform to deploy WebApp and DB to AWS.
 # Running Solution
 
 Update following values in Terraform/terraform.tfvars
-AWS_ACCESS_KEY = ""
-AWS_SECRET_KEY = ""
-AWS_REGION = "ap-southeast-2"
+
+- AWS_ACCESS_KEY = ""
+- AWS_SECRET_KEY = ""
+- AWS_REGION = "ap-southeast-2"
 
 Change image_id to appropriate ami_id in Line 21 (autoscaling.tf) if using region other than ap-southeast-2
 
 Install Terraform on machine to run the Terraform template
 
-- Below Terraform commands were used to initialize the config, plan and apply changes
-  terraform init
-  terraform plan
-  terraform apply
+Below Terraform commands were used to initialize the config, plan and apply changes
+
+- terraform init
+- terraform plan
+- terraform apply
 
 # Limitations
 
