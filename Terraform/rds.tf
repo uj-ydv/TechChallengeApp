@@ -20,8 +20,8 @@ resource "aws_db_instance" "postgres" {
   instance_class          = "db.t3.micro" 
   identifier              = "postgresdb"
   name                    = "app"
-  username                = "postgres"           
-  password                = "changeme" 
+  username                = var.rds_username           
+  password                = var.rds_password 
   db_subnet_group_name    = aws_db_subnet_group.postgres-subnet.name
   parameter_group_name    = aws_db_parameter_group.postgres-parameters.name
   multi_az                = "true" # set to true to have high availability:

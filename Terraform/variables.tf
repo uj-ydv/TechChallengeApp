@@ -15,3 +15,12 @@ variable "PATH_TO_PUBLIC_KEY" {
 variable "INSTANCE_USERNAME" {
     default = "ubuntu"
 }
+
+variable "rds_username" {
+    sensitive = true
+    default = "postgres"
+}
+variable "rds_password" {
+    sensitive = true
+    default = "changeme"
+}
