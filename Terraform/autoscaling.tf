@@ -36,9 +36,10 @@ resource "aws_autoscaling_group" "custom-group-autoscaling" {
   max_size                  = 3
   min_size                  = 1
   health_check_grace_period = 100
-  health_check_type         = "EC2"
+  health_check_type         = "ELB"
   force_delete              = true
   launch_configuration      = aws_launch_configuration.custom_launch_config.name
+  load_balancers            = [aws_elb.custom-elb.name]
   vpc_zone_identifier       = [aws_subnet.customvpc-public-2.id, aws_subnet.customvpc-public-1.id] #default subnet
   tag {
     key                 = "Name"
